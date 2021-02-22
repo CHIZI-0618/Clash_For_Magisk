@@ -2,7 +2,7 @@
 
 scripts=`realpath $0`
 scripts_dir=`dirname ${scripts}`
-. /data/clash/clash.config
+. /data/Clash/clash.config
 
 start_clash() {
     if [ -f "${Clash_bin_path}" ] ; then
