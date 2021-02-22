@@ -2,7 +2,7 @@
 
 scripts=`realpath $0`
 scripts_dir=`dirname ${scripts}`
-. /data/clash/clash.config
+. /data/Clash/clash.config
 
 monitor_local_ipv4() {
     local_ipv4=$(ip a | awk '$1~/inet$/{print $2}')
