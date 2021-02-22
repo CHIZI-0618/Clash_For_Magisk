@@ -2,7 +2,7 @@
 
 scripts=`realpath $0`
 scripts_dir=`dirname ${scripts}`
-. /data/clash/clash.config
+. /data/Clash/clash.config
 
 create_rule_rules() {
     ip rule add fwmark ${mark_id} table ${table_id} pref ${pref_id}
