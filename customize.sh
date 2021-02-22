@@ -5,14 +5,16 @@ architecture=""
 required_version=""
 system_gid="1000"
 system_uid="1000"
-clash_data_dir="/data/clash"
+clash_data_dir="/data/Clash"
 geoip_file_path="${clash_data_dir}/Country.mmdb"
+yacd_file_path="${clash_data_dir}/yacd.zip
 mod_config="${clash_data_dir}/clash.config"
 modules_dir="/data/adb/modules"
 wget_https_disable="wget --no-check-certificate"
 CPFM_mode_dir="${modules_dir}/clash_premium"
 clash_releases_link="https://github.com/Dreamacro/clash/releases"
 geoip_download_link="https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
+yacd_download_link="https://github.com/haishanh/yacd/archive/gh-pages.zip"
 
 if [ -d "${CPFM_mode_dir}" ] ; then
     touch ${CPFM_mode_dir}/disable && ui_print "- CPFM模块在重启后将会禁用."
@@ -42,6 +44,17 @@ if [ ! -f ${geoip_file_path} ] ; then
     ${wget_https_disable} ${geoip_download_link} -O ${geoip_file_path}
     if [ -f ${geoip_file_path} ] ; then
         ui_print "- Country.mmdb下载完成."
+    fi
+fi
+
+if [ ! -f ${yacd_file_path} ] ; then
+    ui_print "- 开始下载yacd本地面板."
+    ${wget_https_disable} ${yacd_download_link} -O ${yacd_file_path}
+    if [ -f ${yacd_file_path} ] ; then
+        unzip -oq ${yacd_file_path} -d ${clash_data_dir}
+        rm -f ${yacd_file_path}
+        touch ${clash_data_dir}/yacd-gh-pages/.nomedia
+        ui_print "- 本地面板下载并解压安装完成."
     fi
 fi
 
