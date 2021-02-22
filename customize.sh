@@ -81,6 +81,8 @@ if [ "$(md5sum ${MODPATH}/clash.config | awk '{print $1}')" != "$(md5sum ${mod_c
         ui_print "- 建议查看配置文件无误后再重启手机."
     fi
     mv ${MODPATH}/clash.config ${clash_data_dir}/
+    mv ${MODPATH}/example.yaml ${clash_data_dir}/
+
 fi
 mv -f ${MODPATH}/libcap/${ARCH}/setcap ${MODPATH}/system/bin/
 mv -f ${MODPATH}/libcap/${ARCH}/getcap ${MODPATH}/system/bin/
