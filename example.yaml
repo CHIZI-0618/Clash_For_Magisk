@@ -13,7 +13,7 @@ dns:
   enable: true
   ipv6: false
   listen: 0.0.0.0:1053
-  enhanced-mode: redir-host #fake-ip
+  enhanced-mode: redir-host #fake-ip模式需要删除clash.config文件最后一行的"198.18.0.0/15"字段
   fake-ip-filter:
     - stun.*.*
     - stun.*.*.*
