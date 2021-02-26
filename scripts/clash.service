@@ -23,14 +23,14 @@ start_clash() {
 
     if ! (${scripts_dir}/clash.tool -p) ; then
         kill -15 `cat ${Clash_pid_file}`
-        rm -rf ${Clash_pid_file}
+        rm -f ${Clash_pid_file}
         exit 1
     fi
 }
 
 stop_clash() {
     kill -15 `cat ${Clash_pid_file}`
-    rm -rf ${Clash_pid_file}
+    rm -f ${Clash_pid_file}
 }
 
 while getopts ":sk" signal ; do
