@@ -8,7 +8,7 @@ scripts_dir="${module_dir}/scripts"
 Clash_pid_file="${Clash_run_path}/clash.pid"
 
 if [ -f ${Clash_pid_file} ] ; then
-    rm -rf ${Clash_pid_file}
+    rm -f ${Clash_pid_file}
 fi
 
 ${scripts_dir}/clash.service -s && ${scripts_dir}/clash.tproxy -s
