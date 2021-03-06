@@ -20,18 +20,14 @@ dns:
     - stun.*.*.*.*
   default-nameserver:
     - 119.29.29.29
-    - 119.28.28.28
     - 223.5.5.5
     - 1.1.1.1
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.pub/dns-query
     - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
     - https://rubyfish.cn/dns-query
   fallback:
-    - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
-    - https://doh.dns.sb/dns-query
+    - https://cloudflare-dns.com/dns-query
     - https://doh.opendns.com/dns-query
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - https://dns.adguard.com/dns-query
